@@ -1,0 +1,40 @@
+import "ListUtils";
+
+final ArrayList = () -> {
+    var _props = {
+        values: {}
+    };
+
+    pass {
+        size: 0,
+        get: (idx) ->  _props.values[int(idx)],
+        stringify: () -> str( _props.values),
+        add: (obj) -> {
+            _props.values[this.size] = obj;
+            this.size = this.size + 1;
+        },
+        clear: () -> {
+            var oldVals = _props.values;
+            _props.values = {};
+            this.size = 0;
+            pass oldVals;
+        },
+        remove: (idx) -> {
+            idx = int(idx);
+            var arr = {};
+            var oldVal =  _props.values[idx];
+
+            _props.values.forEach((el, index) -> {
+                unless(index == idx) {
+                    arr[len(arr)] = el;
+                }
+            });
+
+            _props.values = arr;
+            this.size = this.size - 1;
+            pass oldVal;
+        }
+    };
+};
+
+print("instantiate an array list with ArrayList()");
