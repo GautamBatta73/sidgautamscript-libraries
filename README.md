@@ -32,6 +32,13 @@ You can also install it globally (This will allow you to use it like a native/bu
 sgc install Test ArrayList -g
 ```
 
+## Want A Library to Be Added?
+
+Email the compiled file, documentation, and (preferably) the source code to me: 
+[gbatta2005@gmail.com](mailto:gbatta2005@gmail.com)
+
+I'll add it after some basic tests.
+
 ## For more information
 
 * [SidGautamScript Documentation](https://github.com/GautamBatta73/SidGautam/blob/main/Versions/Prog_Language/Documentation/readme.md)
