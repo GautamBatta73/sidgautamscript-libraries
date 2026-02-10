@@ -1,20 +1,21 @@
 final ArrayList = () -> {
     var _props = {
-        values: {}
+        values: {},
+        size: 0
     };
 
     pass {
-        size: 0,
+        size: () -> _props.size,
         get: (idx) ->  _props.values[int(idx)],
         stringify: () -> str( _props.values),
         add: (obj) -> {
-            _props.values[this.size] = obj;
-            this.size = this.size + 1;
+            _props.values[_props.size] = obj;
+            _props.size = _props.size + 1;
         },
         clear: () -> {
             var oldVals = _props.values;
             _props.values = {};
-            this.size = 0;
+            _props.size = 0;
             pass oldVals;
         },
         remove: (idx) -> {
@@ -30,7 +31,7 @@ final ArrayList = () -> {
             });
 
             _props.values = arr;
-            this.size = this.size - 1;
+            _props.size = _props.size - 1;
             pass oldVal;
         }
     };

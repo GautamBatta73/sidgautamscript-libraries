@@ -2,6 +2,8 @@
 
 This is the README for the "SidGautamScript-Libraries" repository.
 
+<a href="https://www.buymeacoffee.com/GautamBatta73" target="_blank"><img src="https://i.imgur.com/xPQdsF8.png" alt="Buy Me A Hot Chocolate" style="height: 47px !important;width: 200px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 ## What is this?
 
 This repository is just a place to store all the libraries that will not be packaged with the runtime environment for SidGautamScript.
@@ -10,6 +12,7 @@ The './libraries' directory has the library names as directories, and each direc
 - **readme.md**: Documentation For The Library.
 - **lib.sidg**: Source Code For The Library.
 - **lib.sidgc**: Compiled Code For The Library (What will be installed).
+- **/modules/?**: Optional JavaScript Module Exports That Can Be Injected into A SidG Library For More Flexibility.
 
 <br>
 You can install the libraries in the current working directory with the following command (granted you have SidGautamScript >=2.6.5):

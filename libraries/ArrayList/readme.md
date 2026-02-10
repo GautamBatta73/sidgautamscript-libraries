@@ -18,20 +18,22 @@ print(cars); # Prints the currently empty ArrayList instance
 []
 ```
 
-## Properties
-### ArrayList.size
-This property holds the size/length of the ArrayList instance.
+<br>
+
+## Methods
+### ArrayList.size()
+This method returns the size/length of the ArrayList instance.
 
 ```python
 import "./ArrayList";
 
 var cars = ArrayList(); # Declares and creates an instance of ArrayList, called 'cars'
 
-print(cars.size); # Prints the currently empty ArrayList instance's size
+print(cars.size()); # Prints the currently empty ArrayList instance's size
 
 cars.add("Batmobile"); # Adds an element to the ArrayList instance
 
-print(cars.size); # Prints the ArrayList instance's size
+print(cars.size()); # Prints the ArrayList instance's size
 ```
 ```javascript
 0
@@ -40,7 +42,29 @@ print(cars.size); # Prints the ArrayList instance's size
 
 <br>
 
-## Methods
+### ArrayList.add(el)
+This method adds el to the end of the ArrayList instance.
+
+```python
+import "./ArrayList";
+
+var cars = ArrayList(); # Declares and creates an instance of ArrayList, called 'cars'
+
+cars.add("Batmobile"); # Adds an element to the ArrayList instance
+
+cars.add("Invisible Jet"); # Adds an element to the ArrayList instance
+
+print(cars); # Prints the ArrayList instance
+```
+```javascript
+[
+  "Batmobile"
+  "Invisible Jet"
+]
+```
+
+<br>
+
 ### ArrayList.get(idx)
 This method returns the element in the ArrayList instance, at idx.
 
@@ -138,13 +162,13 @@ cars.add("Batmobile"); # Adds an element to the ArrayList instance
 
 cars.add("Invisible Jet"); # Adds an element to the ArrayList instance
 
-print(cars.size); # Prints the size of the ArrayList instance
+print(cars.size()); # Prints the size of the ArrayList instance
 
 print("Removed:", cars.clear()); # Clears all the elements, and prints it
 
 print(cars); # Prints the ArrayList instance
 
-print(cars.size); # Prints the size of the ArrayList instance
+print(cars.size()); # Prints the size of the ArrayList instance
 ```
 ```javascript
 2

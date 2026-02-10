@@ -1,0 +1,76 @@
+final Map = () -> {
+    import "ObjectUtils";
+    var _props = {
+        obj: Object.new(),
+        size: 0,
+        keys: {},
+        values: {}
+    };
+
+    pass {
+        size: () -> _props.size,
+        keys: () -> _props.keys,
+        values: () -> _props.values,
+        get: (key) -> {
+            unless (dataType(key) == "string") {
+                Error("Map.Prototype.get() expects a key string as a parameter");
+            } orElse {
+                pass _props.obj[key];
+            }
+        },
+        stringify: () -> str( _props.obj),
+        set: (key, val) -> {
+            unless (dataType(key) == "string") {
+                Error("Map.Prototype.set() expects a key string as a parameter");
+            } orElse {
+                final length = len(_props.keys);
+                until (var i = 0, i < length, i = i + 1) {
+                    final element = _props.keys[i];
+                    unless (element != key) {
+                        _props.values[i] = val;
+                        _props.obj[key] = val;
+                        pass NULL;
+                    }
+                }
+                _props.keys[_props.size] = key;
+                _props.values[_props.size] = val;
+                _props.obj[key] = val;
+                _props.size = _props.size + 1;
+            }
+        },
+        clear: () -> {
+            var oldVals = _props.obj;
+            _props.obj = Object.new();
+
+            _props.keys = {};
+            _props.values = {};
+            _props.size = 0;
+            pass oldVals;
+        },
+        delete: (key) -> {
+            unless (dataType(key) == "string") {
+                Error("Map.Prototype.delete() expects a key string as a parameter");
+            } orElse {
+                import "ListUtils";
+                var obj = Object.new();
+                var keys = {};
+                var vals = {};
+                var oldVal =  _props.obj[key];
+
+                _props.keys.forEach((el, index) -> {
+                    unless(el == key) {
+                        keys[_props.size] = el;
+                        vals[_props.size] = _props.values[index];
+                        obj[el] = _props.values[index];
+                    }
+                });
+                
+                _props.obj = obj;
+                _props.keys = keys;
+                _props.values = vals;
+                _props.size = _props.size - 1;
+                pass oldVal;
+            }
+        }
+    };
+};

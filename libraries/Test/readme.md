@@ -28,6 +28,23 @@ var sum = add("Number Five: ", 5); # Concatenates "Number Five: " and 5 together
 print(sum); # Prints "Number Five: 5"
 ```
 ```javascript
-"use add(a, b)"
+"use add(a, b) and getText()"
 "Number Five: 5"
 ```
+
+<br>
+
+### getText()
+This function imports a JS module, then returns the imported value.
+
+```python
+import "./Test"; # Library has print statement in top-level scope
+
+print(getText()); # Prints imported JS Module Value
+```
+```javascript
+"use add(a, b) and getText()"
+"Module File!"
+```
+
+<br>

@@ -2,4 +2,8 @@ func add(a, b) {
     pass a + b;
 }
 
-print("use add(a, b)");
+func getText() {       
+    pass injs("__import_local('Test', 'test.js')");
+}
+
+print("use add(a, b) and getText()");
