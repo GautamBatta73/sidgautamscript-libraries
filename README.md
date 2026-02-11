@@ -48,6 +48,11 @@ Email the compiled file, documentation, and (preferably) the source code to me:
 
 I'll add it after some basic tests.
 
+### Guidelines:
+
+- Try to name your package/library as uniquely as possible. Avoiding conflicting package/library names, whether globally or locally.
+- Try not to rely on injecting JavaScript modules as they can have some odd side effects. If something can be done easily in SidGautamScript, use that instead.
+
 ## For more information
 
 * [SidGautamScript Documentation](https://github.com/GautamBatta73/SidGautam/blob/main/Versions/Prog_Language/Documentation/readme.md)
