@@ -14,7 +14,7 @@ This is the README for the "SidGautamScript-Libraries" repository.
 
 This repository is just a place to store all the packages/libraries that will not be packaged with the runtime environment for SidGautamScript.
 
-The './packages' directory has the package names as directories, and each directory has:
+The './libraries' directory has the package names as directories, and each directory has:
 - **readme.md**: Documentation For The Library.
 - **lib.sidg**: Source Code For The Library.
 - **lib.sidgc**: Compiled Code For The Library (What will be installed).
