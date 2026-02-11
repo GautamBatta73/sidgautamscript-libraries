@@ -4,21 +4,27 @@ This is the README for the "SidGautamScript-Libraries" repository.
 
 <a href="https://www.buymeacoffee.com/GautamBatta73" target="_blank"><img src="https://i.imgur.com/xPQdsF8.png" alt="Buy Me A Hot Chocolate" style="height: 47px !important;width: 200px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
+## Terms
+
+- **Package**: The Whole Directory Which Contains Compiled SidGautamScript Libraries, and Modules.
+- **Library**: Compiled SidGautamScript File With Functions, Objects, Constants, etc To Import.
+- **Module**: JavaScript Module File That Can Be Injected into A SidG Library For More Flexibility.
+
 ## What is this?
 
-This repository is just a place to store all the libraries that will not be packaged with the runtime environment for SidGautamScript.
+This repository is just a place to store all the packages/libraries that will not be packaged with the runtime environment for SidGautamScript.
 
-The './libraries' directory has the library names as directories, and each directory has:
+The './packages' directory has the package names as directories, and each directory has:
 - **readme.md**: Documentation For The Library.
 - **lib.sidg**: Source Code For The Library.
 - **lib.sidgc**: Compiled Code For The Library (What will be installed).
 - **/modules/?**: Optional JavaScript Module Exports That Can Be Injected into A SidG Library For More Flexibility.
 
 <br>
-You can install the libraries in the current working directory with the following command (granted you have SidGautamScript >=2.6.5):
+You can install the packages in the current working directory with the following command (granted you have SidGautamScript >=2.6.5):
 
 ```
-sgc install <libNames...>
+sgc install <packages...>
 ```
 
 ```PowerShell
@@ -26,10 +32,10 @@ sgc install Test ArrayList
 ```
 <br>
 
-**Note: Library Names are Case-Sensitive!**
+**Note: Package Names are Case-Sensitive!**
 
 <br>
-You can also install it globally (This will allow you to use it like a native/built-in library):
+You can also install it globally (This will allow you to use it like a native/built-in package/library):
 
 ```PowerShell
 sgc install Test ArrayList -g
