@@ -10,7 +10,7 @@ final ArrayList = () -> {
         stringify: () -> str( _props.values),
         add: (obj) -> {
             _props.values[_props.size] = obj;
-            _props.size = _props.size + 1;
+            _props.size += 1;
         },
         clear: () -> {
             var oldVals = _props.values;
@@ -31,7 +31,7 @@ final ArrayList = () -> {
             });
 
             _props.values = arr;
-            _props.size = _props.size - 1;
+            _props.size -= 1;
             pass oldVal;
         }
     };

@@ -24,7 +24,7 @@ final Map = () -> {
                 Error("Map.Prototype.set() expects a key string as a parameter");
             } orElse {
                 final length = len(_props.keys);
-                until (var i = 0, i < length, i = i + 1) {
+                until (var i = 0, i < length, i += 1) {
                     final element = _props.keys[i];
                     unless (element != key) {
                         _props.values[i] = val;
@@ -35,7 +35,7 @@ final Map = () -> {
                 _props.keys[_props.size] = key;
                 _props.values[_props.size] = val;
                 _props.obj[key] = val;
-                _props.size = _props.size + 1;
+                _props.size += 1;
             }
         },
         clear: () -> {
@@ -68,7 +68,7 @@ final Map = () -> {
                 _props.obj = obj;
                 _props.keys = keys;
                 _props.values = vals;
-                _props.size = _props.size - 1;
+                _props.size -= 1;
                 pass oldVal;
             }
         }
