@@ -17,6 +17,7 @@ This repository is just a place to store all the packages/libraries that will no
 The './libraries' directory has the package names as directories, and each directory has:
 - **readme.md**: Documentation For The Library.
 - **lib.sidg**: Source Code For The Library.
+- **info.json**: Information About The Library (Name, Version, Size, Dependencies).
 - **lib.sidgc**: Compiled Code For The Library (What will be installed).
 - **/modules/?**: Optional JavaScript Module Exports That Can Be Injected into A SidG Library For More Flexibility.
 
@@ -32,7 +33,8 @@ sgc install Test ArrayList
 ```
 <br>
 
-**Note: Package Names are Case-Sensitive!**
+**Note: Package Names are Case-Sensitive!**<br>
+**Note: Any Dependencies Listed In The info.json Are Installed Automatically!**
 
 <br>
 You can also install it globally (This will allow you to use it like a native/built-in package/library):
