@@ -20,17 +20,10 @@ final ArrayList = () -> {
         },
         remove: (idx) -> {
             import "ListUtils";
-            idx = int(idx);
             var arr = {};
             var oldVal =  _props.values[idx];
-
-            _props.values.forEach((el, index) -> {
-                unless(index == idx) {
-                    arr[len(arr)] = el;
-                }
-            });
-
-            _props.values = arr;
+            var newArr = _props.values.deleteIndex(idx);
+            _props.values = newArr;
             _props.size -= 1;
             pass oldVal;
         }
