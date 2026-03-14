@@ -1,0 +1,80 @@
+final UnitTest = (name) -> {
+    var _props = {
+        name: name ?? "Test",
+        testNum: 1
+    };
+
+    pass {
+        getTestNum: () -> _props.testNum,
+        stringify: () -> 'UnitTest: {_props.name}\nTests: {_props.testNum - 1}',
+        assertTrue: (toTest) -> {
+            print(_props.name, '{_props.testNum += 1}:');
+
+            unless (toTest == true) {
+                injs("__import_local('UnitTest', 'colour.js').fail();");
+            } orElse {
+                injs("__import_local('UnitTest', 'colour.js').pass();");
+            }
+
+            print();
+        },
+        assertFalse: (toTest) -> {
+            print(_props.name, '{_props.testNum += 1}:');
+
+            unless (toTest == false) {
+                injs("__import_local('UnitTest', 'colour.js').fail();");
+            } orElse {
+                injs("__import_local('UnitTest', 'colour.js').pass();");
+            }
+
+            print();
+        },
+        assertNull: (toTest) -> {
+            print(_props.name, '{_props.testNum += 1}:');
+
+            unless (dataType(toTest) == "NULL") {
+                injs("__import_local('UnitTest', 'colour.js').fail();");
+            } orElse {
+                injs("__import_local('UnitTest', 'colour.js').pass();");
+            }
+
+            print();
+        },
+        assertEqual: (toTest, expected) -> {
+            print(_props.name, '{_props.testNum += 1}:');
+
+            unless (toTest == expected) {
+                unless (dataType(toTest) != "List" && dataType(toTest) != "Object") {
+                    unless (str(toTest) == str(expected)) {
+                        injs("__import_local('UnitTest', 'colour.js').fail();");                        
+                    } orElse {
+                        injs("__import_local('UnitTest', 'colour.js').pass();");
+                    }
+                } orElse {
+                    injs("__import_local('UnitTest', 'colour.js').fail();");
+                }
+            } orElse {
+                injs("__import_local('UnitTest', 'colour.js').pass();");
+            }
+
+            print();
+        },
+        assertError: (error, code) -> {
+            error = str(error);
+            unless (dataType(code) == "Function") {
+                Error("UnitTest.Prototype.assertError() expects a function as a parameter");
+            }
+
+            print(_props.name, '{_props.testNum += 1}:');
+
+            final toTest = catchError(code);
+            unless (toTest?.message == error) {
+                injs("__import_local('UnitTest', 'colour.js').fail();");
+            } orElse {
+                injs("__import_local('UnitTest', 'colour.js').pass();");
+            }
+
+            print();
+        }
+    };
+};
