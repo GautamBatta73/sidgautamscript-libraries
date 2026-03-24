@@ -17,8 +17,8 @@ This repository is just a place to store all the packages/libraries that will no
 The './libraries' directory has the package names as directories, and each directory has:
 - **readme.md**: Documentation For The Library.
 - **lib.sidg**: Source Code For The Library.
-- **info.json**: Information About The Library (Name, Version, Size, Dependencies).
-- **lib.sidgc**: Compiled Code For The Library (What will be installed).
+- **info.json**: Information About The Library (Name, Version, Size, Dependencies, etc).
+- **lib.sidgc**: Compiled Code For The Library (What will be imported).
 - **/modules/?**: Optional JavaScript Module Exports That Can Be Injected into A SidG Library For More Flexibility.
 
 <br>
